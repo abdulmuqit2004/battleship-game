@@ -1,4 +1,4 @@
-package w25-csci2020u-finalproject-w25-team11;
+package battleship;
 
 public class BattleShip {
     public static void main(String[] args) {

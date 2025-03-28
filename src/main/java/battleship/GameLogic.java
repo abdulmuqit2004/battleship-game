@@ -1,4 +1,4 @@
-package finalassignment;
+package battleship;
 
 import javax.swing.*;
 import java.awt.*;
