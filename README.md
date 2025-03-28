@@ -1,40 +1,48 @@
-# Ludo Game
+# Battleship Game
 
-## Project Information
+## Project Description
 
-Ludo is a classic board game that allows up to 4 players to play against each other, with the goal being to move all their pieces into the center of the board. The game utilizes a simple, interactive GUI built in Java to provide an immersive user experience.
+This is a graphical user interface (GUI)-based Battleship game. It is a multi-client, multiplayer game where players can join in, place their ships, and take turns to attack each other’s ships. The game is implemented using Java, with a client-server architecture, allowing players to play from different machines. Players communicate via chat, roll dice to determine their turn, and attempt to sink each other's fleet.
 
-- **Project Name:** Ludo Game
-- **Collaborators:** [Your Name 1], [Your Name 2] *(No student IDs)*
-- **Technologies Used:** Java, Java Swing for GUI
-- **Game Objective:** Move all 4 pieces to the center of the board to win the game.
+### Features
+- **Multiplayer**: 4 players can play from different machines using sockets and multi-threading.
+- **Ship Placement**: Players can place their ships in the grid, with the option to rotate and position them strategically.
+- **Turn-based Gameplay**: Players take turns attacking the enemy’s grid.
+- **Chat System**: Players can communicate with each other through a live chat.
+- **Win Condition**: The first player to sink all enemy ships wins.
 
-![Ludo Game Screenshot](path_to_your_screenshot.png)
+## How to Run the Game
 
-> Feel free to annotate the image to best describe your application.
+### Prerequisites
 
-## How to Run
+To run the Battleship game, make sure you have the following installed:
 
-### Step-by-step Instructions
+- **Java 23** (or newer)
+- **Maven** (for dependency management)
+- **Socket Server & Client Configuration** (for multiplayer play)
 
-1. Clone this repository:
+### Steps to Run
 
-git clone https://github.com/yourusername/ludo-game.git
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/battleship.git
+
 
 2. Navigate to the project directory:
 
-cd ludo-game
+   ```bash
+   cd battleship
 
+3. Install the dependencies using Maven:
 
-3. Ensure you have Java 23 installed on your system. You can check your Java version by running:
+   ```bash
+   mvn install
+    
+4. Run the Server
 
-java -version
-
-
-4. Compile and run the Java files:
-
-javac *.java java Main
-
+   ```bash
+   mvn exec:java -Dexec.mainClass="com.battleship.server.Server"
 
 Alternatively, if you are using an IDE like IntelliJ IDEA, simply open the project and run the `Main` class.
 
