@@ -53,18 +53,11 @@ Alternatively, if you are using an IDE like IntelliJ IDEA, simply open the proje
 
 > If you are using Docker, ensure you have Docker installed, and use the provided Dockerfile to build and run the container.
 
-## Other Resources
-
 ### Libraries Used:
 - **Java Swing**: Used to create the GUI for the Ludo game.
 
-### Boilderplate Code:
-- None used.
+### Video Demo (ADD LATER)
 
-> For any questions or issues, feel free to open an issue in the repository.
-
-### Video Demo
-If you have a video demo, you can embed it here:
 [Google Drive Demo](link_to_your_video)
 
 Alternatively, you can host the demo on a platform like YouTube, ensuring it's accessible to your instructors for grading.
