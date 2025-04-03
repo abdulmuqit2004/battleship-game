@@ -9,6 +9,7 @@ public class UIManager {
     public static JPanel panel = new JPanel(), fleetBoard = new JPanel(), attackBoard = new JPanel();
     public static JLabel label = new JLabel(), fleetLabel = new JLabel("Fleet Grid"),
             attackLabel = new JLabel("Attack Grid"), announce = new JLabel(), announce2 = new JLabel();
+    public static JLabel statusBar = new JLabel();
     public static JButton[][] fleet = new JButton[11][11], attack = new JButton[11][11];
     public static JButton quit = new JButton("Quit"), destroyer = new JButton(), cruiser = new JButton(),
             submarine = new JButton(), battleship = new JButton(), aircraft = new JButton(),
@@ -36,6 +37,11 @@ public class UIManager {
         announce2.setForeground(Color.white);
         announce2.setFont(new Font("Ariel", Font.PLAIN, 10));
         announce2.setText("*the clicked square will be the leftmost or upmost part of the ship*");
+
+        statusBar.setBounds(720, 670, 800, 20);
+        statusBar.setForeground(Color.ORANGE);
+        statusBar.setFont(new Font("Ariel", Font.BOLD, 16));
+        statusBar.setText("Connecting to server...");
 
         fleetLabel.setBounds(720, 20, 200, 20);
         fleetLabel.setForeground(Color.white);
@@ -140,5 +146,9 @@ public class UIManager {
         panel.add(attackLabel);
         panel.add(announce);
         panel.add(announce2);
+        panel.add(statusBar);
+    }
+    public static void setMessage(String msg) {
+        statusBar.setText(msg);
     }
 }

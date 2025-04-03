@@ -47,19 +47,4 @@ public class Utils {
         }
         return true;
     }
-
-    public static boolean compCheckPossible(int[][] attacked, int x, int y, int length, int width) {
-        for (int i = y - width - 1; i < y + 1; i++) {
-            for (int j = x - length - 1; j < x + 1; j++) {
-                try {
-                    if (attacked[i][j] == 1) {
-                        return false;
-                    }
-                } catch (Exception e) {
-                    // Ignore out-of-bounds
-                }
-            }
-        }
-        return true;
-    }
 }
