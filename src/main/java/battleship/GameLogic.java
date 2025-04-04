@@ -82,10 +82,12 @@ public class GameLogic {
 
                             UIManager.attack[i][j].setEnabled(false);
                             isMyTurn = false;
+                            disableAttackBoard();
                             UIManager.label.setText("Opponent's Turn");
                         } catch (Exception ex) {
                             ex.printStackTrace();
                         }
+                        return;
                     }
                 }
             }
@@ -107,8 +109,10 @@ public class GameLogic {
 
                     switch (msg.type) {
                         case "TURN":
+                            System.out.println("TURN message received by Player " + Client.playerId);
                             isMyTurn = true;
                             UIManager.label.setText("Your Turn");
+                            UIManager.setMessage("Your Turn"); // Optional
                             enableAttackBoard();
                             break;
 
@@ -168,10 +172,18 @@ public class GameLogic {
         }
     }
 
-    private static void endGame(boolean playerWon) {
+    private static void disableAttackBoard() {
         for (int i = 1; i < 11; i++) {
             for (int j = 1; j < 11; j++) {
                 UIManager.attack[i][j].setEnabled(false);
+            }
+        }
+    }
+
+    private static void endGame(boolean playerWon) {
+        disableAttackBoard();
+        for (int i = 1; i < 11; i++) {
+            for (int j = 1; j < 11; j++) {
                 UIManager.fleet[i][j].setEnabled(false);
             }
         }

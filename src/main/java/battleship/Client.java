@@ -14,7 +14,6 @@ public class Client {
             out = new ObjectOutputStream(socket.getOutputStream());
             in = new ObjectInputStream(socket.getInputStream());
 
-            // ✅ Receive JOINED message
             GameMessage joined = (GameMessage) in.readObject();
             playerId = joined.playerId;
             System.out.println(joined.message);

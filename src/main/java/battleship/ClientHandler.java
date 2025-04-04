@@ -10,6 +10,7 @@ public class ClientHandler extends Thread {
     private ClientHandler opponent;
     private int playerId;
     private boolean ready = false;
+    private int hitCount = 0;
 
     public ClientHandler(Socket socket, int playerId) {
         this.socket = socket;
@@ -74,7 +75,38 @@ public class ClientHandler extends Thread {
 
                         case "RESULT":
                             if (opponent != null) opponent.sendMessage(incoming);
+
+                            if (incoming.hit) {
+                                this.hitCount++;
+
+                                if (hitCount >= 17) {
+                                    GameMessage win = new GameMessage();
+                                    win.type = "WIN";
+                                    win.message = "You won!";
+                                    sendMessage(win);
+
+                                    GameMessage lose = new GameMessage();
+                                    lose.type = "LOSE";
+                                    lose.message = "You lost!";
+                                    opponent.sendMessage(lose);
+
+                                    System.out.println("Player " + playerId + " wins!");
+                                    return; // stop sending TURN
+                                }
+                            }
+
+                            System.out.println("RESULT received from Player " + playerId + " → Sending TURN to Player " + opponent.getPlayerId());
+
+                            // Now give the turn to the opponent
+                            GameMessage turnMsg = new GameMessage();
+                            turnMsg.type = "TURN";
+                            turnMsg.message = "Your turn!";
+                            turnMsg.playerId = this.getPlayerId(); // give the turn to the player sending RESULT
+
+                            this.sendMessage(turnMsg); // sender is now attacker
+                            System.out.println("Turn passed to Player " + this.getPlayerId());
                             break;
+
 
                         case "WIN":
                             if (opponent != null) {
