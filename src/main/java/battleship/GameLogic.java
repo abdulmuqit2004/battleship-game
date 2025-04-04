@@ -188,7 +188,7 @@ public class GameLogic {
             }
         }
 
-        UIManager.label.setText(playerWon ? "YOU WON!" : "You lost!");
-        UIManager.panel.setBackground(playerWon ? Color.GREEN : Color.RED);
+        UIManager.label.setText(playerWon ? "YOU LOST!" : "You WON!");
+        UIManager.panel.setBackground(playerWon ? Color.RED : Color.GREEN);
     }
 }
