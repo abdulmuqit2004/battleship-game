@@ -4,6 +4,12 @@
 
 This is a graphical user interface (GUI)-based Battleship game. It is a multi-client, multiplayer game where players can join in, place their ships, and take turns to attack each other’s ships. The game is implemented using Java, with a client-server architecture, allowing players to play from different machines. Players communicate via chat, roll dice to determine their turn, and attempt to sink each other's fleet.
 
+### Team members
+
+- Abdul Muqit Afzal
+- Amir Abouelhassan
+- Haris Khan
+
 ### Features
 - **Multiplayer**: 4 players can play from different machines using sockets and multi-threading.
 - **Ship Placement**: Players can place their ships in the grid, with the option to rotate and position them strategically.
@@ -56,12 +62,6 @@ Alternatively, if you are using an IDE like IntelliJ IDEA, simply open the proje
 ### Libraries Used:
 - **Java Swing**: Used to create the GUI for the Ludo game.
 
-### Video Demo (ADD LATER)
+### Video Demo
 
 [Google Drive Demo](link_to_your_video)
-
-Alternatively, you can host the demo on a platform like YouTube, ensuring it's accessible to your instructors for grading.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
